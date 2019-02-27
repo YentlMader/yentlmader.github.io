@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
-    const WIDTH = 300;
-    const HEIGHT = 520;
+    const WIDTH = 720;
+    const HEIGHT = 1248;
     const NEAR_CLIP = 30;
 
     // Scene
