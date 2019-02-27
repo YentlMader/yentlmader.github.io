@@ -1,9 +1,120 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Test</title>
-</head>
-<body>
-Test
-</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+        <title>LIWEST Gaming Banner</title>
+        <!-- Link to the last version of BabylonJS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+        <script src="scripts/LoaderSupport.js"></script>
+        <script src="scripts/MTLLoader.js"></script>
+        <script src="scripts/OBJLoader2.js"></script>
+        <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+        <script src="main.js"></script>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .score {
+                position: absolute;
+                width: 300px;
+                text-align: right;
+                padding: 15px;
+            }
+
+            #container {
+                width: 300px;
+                height: 600px;
+                background-image: url("images/frame.svg"), url('./images/bg_300x600.jpg');
+                background-repeat: no-repeat, no-repeat;
+                background-position-y: 0px, -80px;
+            }
+
+            .overlay {
+                position: absolute;
+                width: 300px;
+                height: 600px;
+            }
+
+            .start {
+                position: absolute;
+                top: 280px;
+                width: 100%;
+                text-align: center;
+            }
+            .start img {
+                cursor: pointer;
+            }
+
+            .controls {
+                position: absolute;
+                width: 300px;
+                height: 80px;
+                bottom: 0;
+            }
+            .controls img {
+                display: block;
+                width: 300px;
+                height: 80px;
+            }
+
+            .btn_left, .btn_right {
+                cursor: pointer;
+                opacity: 0;
+                position: absolute;
+                width: 150px;
+                height: 80px;
+                left: 0;
+                bottom: 0;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                z-index: 99;
+            }
+
+            .btn_right {
+                left: 150px;
+                right: 0;
+            }
+
+            .logo {
+                text-align: center;
+            }
+
+            .logo img {
+                width: 200px;
+                margin: 15px;
+            }
+        </style>
+    </head>
+    <body>
+            <canvas id="canvas" width="301" height="601" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 0.00);"></canvas>
+        <div id="container">
+            <div class="overlay">
+                <div class="logo">
+                    <img src="images/logo_LIWEST.svg"></img>
+                </div>
+                <div class="score">
+                    <p class="scoreText">0</p>
+                </div>
+                <div class="start">
+                    <img src="images/btn_start.png" alt="START" />
+                </div>
+                <div class="controls">
+                    <img src="images/controls.svg" alt="Controls" />
+                    <div class="btn_left"></div>
+                    <div class="btn_right"></div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
